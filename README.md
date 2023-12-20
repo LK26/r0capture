@@ -4,13 +4,15 @@
 
 ## 简介
 
-- 仅限安卓平台，测试安卓7、8、9、10、11 可用 ；
+- 仅限安卓平台，测试安卓7、8、9、10、11、12、13、14 可用 ；
 - 无视所有证书校验或绑定，不用考虑任何证书的事情；
 - 通杀TCP/IP四层模型中的应用层中的全部协议；
 - 通杀协议包括：Http,WebSocket,Ftp,Xmpp,Imap,Smtp,Protobuf等等、以及它们的SSL版本；
 - 通杀所有应用层框架，包括HttpUrlConnection、Okhttp1/3/4、Retrofit/Volley等等；
 - 无视加固，不管是整体壳还是二代壳或VMP，不用考虑加固的事情；
 - 如果有抓不到的情况欢迎提issue，或者直接加vx：r0ysue，进行反馈~
+
+### June.18th 2023 update：测试Pixel4/安卓13/KernelSU/Frida16 功能工作正常 正常抓包 导出证书
 
 ### January.14th 2021 update：增加几个辅助功能
 
@@ -26,13 +28,14 @@
 
 - Spawn 模式：
 
-`$ python3 r0capture.py -U -f com.qiyi.video -v`
+`$ python3 r0capture.py -U -f com.coolapk.market -v`
 
-- Attach 模式，抓包内容保存成pcap文件供后续分析：
+- Attach 模式，抓包内容保存成pcap文件供后续分析： 
 
-`$ python3 r0capture.py -U com.qiyi.video -v -p iqiyi.pcap`
+`$ python3 r0capture.py -U 酷安 -v -p iqiyi.pcap` 
 
 建议使用`Attach`模式，从感兴趣的地方开始抓包，并且保存成`pcap`文件，供后续使用Wireshark进行分析。
+> 老版本Frida使用包名，新版本Frida使用APP名。APP名必须是点开app后，frida-ps -U显示的那个app名字。
 
 ![](pic/Sample.PNG)
 
